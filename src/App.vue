@@ -5,6 +5,7 @@
     class="container"
     @add-post="addPost"
     @delete-post="remove"
+    @edit-post="edit"
   />
 </template>
 
@@ -29,6 +30,14 @@ export default {
     },
     remove(id) {
       this.posts = this.posts.filter(post => post.id !== id);
+    },
+    edit(id, data) {
+      this.posts = this.posts.map(post => post.id === id ? {
+        ...post,
+        ...data,
+      } : post);
+      
+      this.$router.push(`/post/${id}`);
     },
   },
   watch: {

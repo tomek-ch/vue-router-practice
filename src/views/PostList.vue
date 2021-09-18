@@ -4,9 +4,14 @@
       <router-link :to="`/post/${post.id}`">
         {{ post.title }}
       </router-link>
-      <button @click="$emit('delete-post', post.id)">
-        Delete
-      </button>
+      <div class="btns">
+        <router-link :to="`/post/${post.id}/edit`" class="btn">
+          Edit
+        </router-link>
+        <button @click="$emit('delete-post', post.id)">
+          Delete
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -23,10 +28,15 @@ export default {
 .item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 1em 0;
 }
 
-.item a {
+.item a:not(.btn) {
   font-size: 1.2em;
+}
+
+.btn {
+  margin-right: 0.5em;
 }
 </style>
