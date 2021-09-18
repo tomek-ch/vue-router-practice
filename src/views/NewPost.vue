@@ -1,5 +1,5 @@
 <template>
-  <PostForm btnLabel="Add" :onSubmit="add"/>
+  <PostForm btnLabel="Add" @submit="add"/>
 </template>
 
 <script>

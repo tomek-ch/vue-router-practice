@@ -17,7 +17,7 @@
 <script>
 export default {
   name: 'PostForm',
-  emits: ['add-post'],
+  emits: ['submit'],
   props: ['btnLabel', 'initial', 'onSubmit'],
   data() {
     return {
@@ -29,7 +29,7 @@ export default {
     handleSubmit(e) {
       e.preventDefault();
       const { title, body } = this;
-      this.onSubmit({ title, body });
+      this.$emit('submit', { title, body });
     },
   },
 };
