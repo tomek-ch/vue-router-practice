@@ -15,10 +15,10 @@ export default {
   name: 'PostList',
   props: ['posts'],
   components: { NotFound },
-  data() {
-    return {
-      post: this.posts.find(({ id }) => id === Number(this.$route.params.id)),
-    };
+  computed: {
+    post() {
+      return this.posts.find(({ id }) => id === Number(this.$route.params.id))
+    },
   },
 };
 </script>

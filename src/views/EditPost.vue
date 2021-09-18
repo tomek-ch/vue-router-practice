@@ -17,10 +17,10 @@ export default {
   emits: ['edit-post'],
   props: ['posts'],
   components: { PostForm, NotFound },
-  data() {
-    return {
-      post: this.posts.find(({ id }) => id === Number(this.$route.params.id)),
-    }
+  computed: {
+    post() {
+      return this.posts.find(({ id }) => id === Number(this.$route.params.id))
+    },
   },
   methods: {
     edit(data) {
