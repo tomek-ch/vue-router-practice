@@ -13,6 +13,7 @@
         </button>
       </div>
     </div>
+    <div v-if="!posts.length">No posts yet.</div>
   </div>
 </template>
 
