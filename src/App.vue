@@ -36,15 +36,13 @@ export default {
         ...post,
         ...data,
       } : post);
-      
+
       this.$router.push(`/post/${id}`);
     },
   },
   watch: {
-    posts: {
-      handler(posts) {
-        localStorage.setItem("posts", JSON.stringify(posts));
-      },
+    posts(posts) {
+      localStorage.setItem("posts", JSON.stringify(posts));
     },
   },
 }
