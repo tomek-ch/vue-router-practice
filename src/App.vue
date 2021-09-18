@@ -75,7 +75,7 @@ button, .btn {
   font-size: inherit;
 }
 
-button:hover, .btn:hover {
+button:hover:not(:disabled), .btn:hover:not(:disabled) {
   background-color: #ccc;
 }
 
