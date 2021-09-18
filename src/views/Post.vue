@@ -22,3 +22,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+h1 {
+  word-break: break-all;
+}
+</style>

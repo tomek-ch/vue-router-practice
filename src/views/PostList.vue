@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-for="post in posts" :key="post.id" class="item">
-      <router-link :to="`/post/${post.id}`">
+      <router-link :to="`/post/${post.id}`" class="title">
         {{ post.title }}
       </router-link>
       <div class="btns">
@@ -31,13 +31,18 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin: 1em 0;
+  gap: 1em;
 }
 
-.item a:not(.btn) {
+.title {
   font-size: 1.2em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.btn {
-  margin-right: 0.5em;
+.btns {
+  display: flex;
+  gap: 0.5em;
 }
 </style>
