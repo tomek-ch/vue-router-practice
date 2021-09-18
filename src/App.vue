@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header class="container"/>
   <router-view
     :posts="posts"
     class="container"
@@ -51,12 +51,12 @@ export default {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
+  padding: 2em;
 }
 
 .container {
   max-width: 500px;
   margin: auto;
-  padding: 2em;
 }
 
 button, .btn {

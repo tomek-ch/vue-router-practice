@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="post in posts" :key="post.id">
+    <div v-for="post in posts" :key="post.id" class="item">
       <router-link :to="`/post/${post.id}`">
         {{ post.title }}
       </router-link>
@@ -18,3 +18,15 @@ export default {
   emits: ['delete-post'],
 };
 </script>
+
+<style scoped>
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+
+.item a {
+  font-size: 1.2em;
+}
+</style>
