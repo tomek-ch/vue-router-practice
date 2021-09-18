@@ -1,34 +1,17 @@
 <template>
-  <form @submit="handleSubmit">
-    <label>
-      Title:
-      <input v-model="title" />
-    </label>
-    <label>
-      Body:
-      <textarea v-model="body" />
-    </label>
-    <button :disabled="!this.title || !this.body">
-      Add
-    </button>
-  </form>
+  <PostForm btnLabel="Add" :onSubmit="add"/>
 </template>
 
 <script>
+import PostForm from '../components/PostForm';
+
 export default {
   name: 'NewPost',
   emits: ['add-post'],
-  data() {
-    return {
-      title: '',
-      body: '',
-    };
-  },
+  components: { PostForm },
   methods: {
-    handleSubmit(e) {
-      e.preventDefault();
-      const { body, title } = this;
-      this.$emit('add-post', { body, title });
+    add(data) {
+      this.$emit('add-post', data);
     },
   },
 };
