@@ -4,6 +4,7 @@
     :posts="posts"
     class="container"
     @add-post="addPost"
+    @delete-post="remove"
   />
 </template>
 
