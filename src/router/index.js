@@ -3,6 +3,7 @@ import PostList from "../views/PostList.vue";
 import Post from "../views/Post.vue";
 import NewPost from "../views/NewPost.vue";
 import EditPost from "../views/EditPost.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/",
     name: "PostList",
     component: PostList,
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFound,
   },
 ];
 
