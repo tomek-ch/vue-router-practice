@@ -11,17 +11,14 @@
 <script>
 import PostForm from '../components/PostForm';
 import NotFound from './NotFound';
+import post from '../utils/post';
 
 export default {
   name: 'EditPost',
   emits: ['edit-post'],
   props: ['posts'],
   components: { PostForm, NotFound },
-  computed: {
-    post() {
-      return this.posts.find(({ id }) => id === Number(this.$route.params.id))
-    },
-  },
+  computed: { post },
   methods: {
     edit(data) {
       this.$emit('edit-post', this.post.id, data);

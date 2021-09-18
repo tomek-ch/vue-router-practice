@@ -10,16 +10,13 @@
 
 <script>
 import NotFound from './NotFound';
+import post from '../utils/post';
 
 export default {
   name: 'PostList',
   props: ['posts'],
   components: { NotFound },
-  computed: {
-    post() {
-      return this.posts.find(({ id }) => id === Number(this.$route.params.id))
-    },
-  },
+  computed: { post },
 };
 </script>
 
